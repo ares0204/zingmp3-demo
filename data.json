@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "background": ".\/assets\/img\/songs\/0.webp",
+        "name": "Anh \u0110\u00e3 L\u1ea1c V\u00e0o",
+        "singer": "Green, \u0110\u1ea1i M\u00e8o Remix",
+        "pathSong": ".\/assets\/music\/list-song\/0.mp3",
+        "duration": "04:27"
+    },
+    {
+        "id": 4,
+        "background": ".\/assets\/img\/songs\/1.webp",
+        "name": "Ch\u1ea1y V\u1ec1 Kh\u00f3c V\u1edbi Anh",
+        "singer": "Erik, Duzme Remix",
+        "pathSong": ".\/assets\/music\/list-song\/1.mp3",
+        "duration": "04:05"
+    },
+    {
+        "id": 5,
+        "background": ".\/assets\/img\/songs\/2.jpeg",
+        "name": "S\u1eb5n S\u00e0ng Y\u00eau Em \u0110i Th\u00f4i",
+        "singer": "Woni, Minh T\u00fa, \u0110\u1ea1i M\u00e8o Remix",
+        "pathSong": ".\/assets\/music\/list-song\/2.mp3",
+        "duration": "03:51"
+    },
+    {
+        "id": 6,
+        "background": ".\/assets\/img\/songs\/3.webp",
+        "name": "Gieo Qu\u1ebb",
+        "singer": "Ho\u00e0ng Thu\u1ef3 Linh, \u0110EN, Orinn Remix",
+        "pathSong": ".\/assets\/music\/list-song\/3.mp3",
+        "duration": "04:27"
+    },
+    {
+        "id": 7,
+        "background": ".\/assets\/img\/songs\/4.webp",
+        "name": "Vui La\u0306\u0301m Nha",
+        "singer": "Hu\u031bo\u031bng Ly, Jombie, RIN Music Remix",
+        "pathSong": ".\/assets\/music\/list-song\/4.m4a",
+        "duration": "05:16"
+    },
+    {
+        "id": 8,
+        "background": ".\/assets\/img\/songs\/5.webp",
+        "name": "Lu\u031bu So\u0302\u0301 Em \u0110i",
+        "singer": "Huy\u0300nh Va\u0306n, V.P. Tie\u0302n, \u0110a\u0323i Me\u0300o Remix",
+        "pathSong": ".\/assets\/music\/list-song\/5.m4a",
+        "duration": "04:10"
+    },
+    {
+        "id": 9,
+        "background": ".\/assets\/img\/songs\/6.webp",
+        "name": "Nhu\u031b Mo\u0323\u0302t Ngu\u031bo\u031b\u0300i Du\u031bng",
+        "singer": "Nguy\u1ec5n Th\u1ea1c B\u1ea3o Ng\u1ecdc, Remix",
+        "pathSong": ".\/assets\/music\/list-song\/6.mp3",
+        "duration": "05:05"
+    },
+    {
+        "id": 10,
+        "background": ".\/assets\/img\/songs\/7.webp",
+        "name": "O\u0302m Nhie\u0302\u0300u Mo\u0323\u0302ng Mo\u031b",
+        "singer": "Pha\u0301t Huy T4, \u0110a\u0323i Me\u0300o Remix",
+        "pathSong": ".\/assets\/music\/list-song\/7.m4a",
+        "duration": "03:16"
+    },
+    {
+        "id": 11,
+        "background": ".\/assets\/img\/songs\/8.jpg",
+        "name": "T\u00ecnh Y\u00eau Ng\u1ee7 Qu\u00ean",
+        "singer": "Ho\u00e0ng T\u00f4n, LyHan, Orinn Remix",
+        "pathSong": ".\/assets\/music\/list-song\/8.mp3",
+        "duration": "04:27"
+    },
+    {
+        "id": 12,
+        "background": ".\/assets\/img\/songs\/9.webp",
+        "name": "Kho\u0302ng Ba\u0306\u0300ng",
+        "singer": "Na, RIN Music Remix",
+        "pathSong": ".\/assets\/music\/list-song\/9.m4a",
+        "duration": "03:23"
+    },
+    {
+        "id": 13,
+        "background": ".\/assets\/img\/songs\/10.webp",
+        "name": "Ai Chung Ti\u0300nh \u0110u\u031bo\u031b\u0323c Ma\u0303i",
+        "singer": "\u0110inh Tu\u0300ng Huy, ACV Remix",
+        "pathSong": ".\/assets\/music\/list-song\/10.m4a",
+        "duration": "03:55"
+    },
+    {
+        "id": 14,
+        "background": ".\/assets\/img\/songs\/11.webp",
+        "name": "Co\u0302 \u0110o\u031bn Da\u0300nh Cho Ai",
+        "singer": "NAL, LEE KEN, Orinn Remix",
+        "pathSong": ".\/assets\/music\/list-song\/11.m4a",
+        "duration": "04:45"
+    },
+    {
+        "id": 15,
+        "background": ".\/assets\/img\/songs\/12.webp",
+        "name": "A\u0301nh ma\u0306\u0301t ta cha\u0323m nhau",
+        "singer": "Ngo\u0302 Lan Hu\u031bo\u031bng, \u0110a\u0323i Me\u0300o remix",
+        "pathSong": ".\/assets\/music\/list-song\/12.m4a",
+        "duration": "06:01"
+    },
+    {
+        "id": 16,
+        "background": ".\/assets\/img\/songs\/13.webp",
+        "name": "2 Ph\u00fat H\u01a1n",
+        "singer": "Phao, KAIZ Remix",
+        "pathSong": ".\/assets\/music\/list-song\/13.m4a",
+        "duration": "05:02"
+    },
+    {
+        "id": 17,
+        "background": ".\/assets\/img\/songs\/14.webp",
+        "name": "La\u0300 Ai Tu\u031b\u0300 Bo\u0309 La\u0300 Ai Vo\u0302 Ti\u0300nh",
+        "singer": "H\u01b0\u01a1ng Ly, Jombie (G5R), RIN Music Remix",
+        "pathSong": ".\/assets\/music\/list-song\/14.m4a",
+        "duration": "03:25"
+    },
+    {
+        "id": 18,
+        "background": ".\/assets\/img\/songs\/2.jpeg",
+        "name": "Y\u00eau \u0110\u1eebng S\u1ee3 \u0110au",
+        "singer": "Ng\u00f4 Lan H\u01b0\u01a1ng, Cukak Remix",
+        "pathSong": ".\/assets\/music\/list-song\/15.m4a",
+        "duration": "03:51"
+    },
+    {
+        "id": 19,
+        "background": ".\/assets\/img\/songs\/16.jpg",
+        "name": "id 2022",
+        "singer": "W\/n ft. 267",
+        "pathSong": ".\/assets\/music\/list-song\/16.mp3",
+        "duration": "04:03"
+    },
+    {
+        "id": 20,
+        "background": ".\/assets\/img\/songs\/17.jpg",
+        "name": "id T41104",
+        "singer": "W\/n ft. 267",
+        "pathSong": ".\/assets\/music\/list-song\/17.mp3",
+        "duration": "03:47"
+    },
+    {
+        "id": 21,
+        "background": ".\/assets\/img\/songs\/18.jpg",
+        "name": "L\u1ec7 l\u01b0u ly",
+        "singer": "V\u0169 Ph\u1ee5ng Ti\u00ean - DT T\u1eadp Rap",
+        "pathSong": ".\/assets\/music\/list-song\/18.mp3",
+        "duration": "03:45"
+    },
+    {
+        "id": 22,
+        "background": ".\/assets\/img\/songs\/19.jpg",
+        "name": "Em Kh\u00f4ng Kh\u00f3c",
+        "singer": "buitruonglinh ft vuphungtien",
+        "pathSong": ".\/assets\/music\/list-song\/19.mp3",
+        "duration": "04:29"
+    }
+]
