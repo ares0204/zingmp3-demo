@@ -48,7 +48,7 @@ const slidersDiscover = $$('.container-discover__slider-item');
 
 
 
-var backgroundIndex= 0;
+var backgroundIndex = 0;
 // x = 100  // center
 // y = 50   // center
 // r = 50   // radius
@@ -59,31 +59,31 @@ var backgroundIndex= 0;
 
 function fetchSongsData() {
     return fetch('./data.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .catch(error => {
-        console.error('Error fetching JSON:', error);
-      });
-  }
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.error('Error fetching JSON:', error);
+        });
+}
 
-  fetchSongsData().then(data => {
-    
+fetchSongsData().then(data => {
+
     const app = {
         // sliderIndex: 0,
 
         songsData: data,
 
-        currentIndex : 0,
+        currentIndex: 0,
         isPlaying: false,
         isRandom: false,
         isRepeat: false,
         isMute: false,
         volume: 100,
-    
+
         defineProperties: function() {
             Object.defineProperty(this, 'currentSong', {
                 get: function() {
@@ -91,7 +91,7 @@ function fetchSongsData() {
                 }
             })
         },
-    
+
         toastSlide: function() {
             const toatMain = $('#toast');
             if (toatMain) {
@@ -109,7 +109,7 @@ function fetchSongsData() {
                 }, 3000)
             }
         },
-    
+
         // THEME APPLY SKIN
         applyTheme: function() {
             themeItems.forEach((themeItem, index) => {
@@ -143,7 +143,7 @@ function fetchSongsData() {
                         $('.music__option-item.music__option-item--active').style.color = "#fff";
                         $('.music-control__volume-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
                         $('.music-control__progress-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
-    
+
                         $$('.js__main-color').forEach((item) => {
                             item.style.color = '#fff';
                         })
@@ -183,7 +183,7 @@ function fetchSongsData() {
                         $('.music__option-item.music__option-item--active').style.color = "#fff";
                         $('.music-control__volume-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
                         $('.music-control__progress-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
-    
+
                         $$('.js__main-color').forEach((item) => {
                             item.style.color = '#fff';
                         })
@@ -223,7 +223,7 @@ function fetchSongsData() {
                         $('.music__option-item.music__option-item--active').style.color = "#fff";
                         $('.music-control__volume-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
                         $('.music-control__progress-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
-    
+
                         $$('.js__main-color').forEach((item) => {
                             item.style.color = '#fff';
                         })
@@ -260,7 +260,7 @@ function fetchSongsData() {
                         $('.header__width-search-input').classList.remove('header__width-search-input--dark');
                         $('.music-control__volume-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
                         $('.music-control__progress-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-    
+
                         $$('.js__main-color').forEach((item) => {
                             item.style.color = '#000';
                         })
@@ -300,7 +300,7 @@ function fetchSongsData() {
                         $('.header__width-search-input').classList.remove('header__width-search-input--dark');
                         $('.music-control__volume-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
                         $('.music-control__progress-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-                        
+
                         $$('.js__main-color').forEach((item) => {
                             item.style.color = '#000';
                         })
@@ -342,7 +342,7 @@ function fetchSongsData() {
                         $('.music__option-item.music__option-item--active').style.color = "#000";
                         $('.music-control__volume-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
                         $('.music-control__progress-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-    
+
                         $$('.js__main-color').forEach((item) => {
                             item.style.color = '#000';
                         })
@@ -382,7 +382,7 @@ function fetchSongsData() {
                         $('.music__option-item.music__option-item--active').style.color = "#000";
                         $('.music-control__volume-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
                         $('.music-control__progress-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-    
+
                         $$('.js__main-color').forEach((item) => {
                             item.style.color = '#000';
                         })
@@ -422,7 +422,7 @@ function fetchSongsData() {
                         $('.music__option-item.music__option-item--active').style.color = "#000";
                         $('.music-control__volume-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
                         $('.music-control__progress-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-    
+
                         $$('.js__main-color').forEach((item) => {
                             item.style.color = '#000';
                         })
@@ -436,14 +436,14 @@ function fetchSongsData() {
                             item.style.border = "2px solid #000";
                         })
                     }
-                    
+
                     app.verifyOptionTextColor();
                 }
             });
         },
-    
+
         // RENDER LIST MUSIC ITEM
-        renderPlayList : function (playListElement, songsData) {
+        renderPlayList: function(playListElement, songsData) {
             const htmls = songsData.map((song, index) => {
                 return `
                     <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
@@ -462,7 +462,7 @@ function fetchSongsData() {
                             </div>
                         </div>
                         <div class="songs-item-center tablet-hiden mobile-hiden  js__sub-color">
-                            <span>${song.name} (Remix)</span>
+                            <span>${song.name}</span>
                         </div>
                         <div class="songs-item-right mobile-hiden ">
                             <span class="songs-item-right-mv ipad-air-hiden"><i class="fas fa-photo-video js__main-color"></i></span>
@@ -478,9 +478,9 @@ function fetchSongsData() {
             })
             playListElement.innerHTML = htmls.join('');
         },
-    
+
         // RENDER LIST MUSIC ITEM OPTION1
-        renderPlayList1 : function (playListElement, songsData) {
+        renderPlayList1: function(playListElement, songsData) {
             const htmls = songsData.map((song, index) => {
                 return `
                     <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
@@ -499,7 +499,7 @@ function fetchSongsData() {
                             </div>
                         </div>
                         <div class="songs-item-center tablet-hiden mobile-hiden js__sub-color">
-                            <span>${song.name} (Remix)</span>
+                            <span>${song.name}</span>
                         </div>
                         <div class="songs-item-right mobile-hiden">
                             <span class="songs-item-right-mv ipad-air-hiden"><i class="fas fa-photo-video js__main-color"></i></span>
@@ -515,9 +515,9 @@ function fetchSongsData() {
             })
             playListElement.innerHTML = htmls.join('');
         },
-    
+
         // RENDER LIST ZINGCHART
-        renderZingChart : function () {
+        renderZingChart: function() {
             const htmls = this.songsData.map((song, index) => {
                 return index < 10 ? `
                     <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
@@ -538,7 +538,7 @@ function fetchSongsData() {
                             </div>
                         </div>
                         <div class="songs-item-center tablet-hiden mobile-hiden js__sub-color">
-                            <span>${song.name} (Remix)</span>
+                            <span>${song.name}</span>
                         </div>
                         <div class="songs-item-right mobile-hiden">
                             <span class="songs-item-right-mv ipad-air-hiden"><i class="fas fa-photo-video js__main-color"></i></span>
@@ -554,9 +554,9 @@ function fetchSongsData() {
             })
             $('.js__zingchart__list').innerHTML = htmls.join('');
         },
-    
+
         // RENDER LIST ZINGCHART MORE
-        renderZingChartMore : function () {
+        renderZingChartMore: function() {
             const htmls = this.songsData.map((song, index) => {
                 return `
                     <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
@@ -577,7 +577,7 @@ function fetchSongsData() {
                             </div>
                         </div>
                         <div class="songs-item-center tablet-hiden mobile-hiden js__sub-color">
-                            <span>${song.name} (Remix)</span>
+                            <span>${song.name}</span>
                         </div>
                         <div class="songs-item-right mobile-hiden">
                             <span class="songs-item-right-mv ipad-air-hiden"><i class="fas fa-photo-video js__main-color"></i></span>
@@ -593,9 +593,9 @@ function fetchSongsData() {
             })
             $('.js__zingchart__list').innerHTML = htmls.join('');
         },
-    
+
         // RENDER HEADDING NEXT SONG 
-        renderNextSongHeadding: function(playListElement, songs){
+        renderNextSongHeadding: function(playListElement, songs) {
             const htmls = this.songsData.map((song, index) => {
                 return index <= this.currentIndex ? `
                 <!-- nextsong__fist-item-headding--active nextsong__fist-item-playbtn--active-->
@@ -623,9 +623,9 @@ function fetchSongsData() {
             })
             playListElement.innerHTML = htmls.join('');
         },
-    
+
         // RENDER HEADDING NEXT SONG BAN ĐẦU
-        renderNextSongHeaddingStart: function(playListElement, songs){
+        renderNextSongHeaddingStart: function(playListElement, songs) {
             const htmls = this.songsData.map((song, index) => {
                 return index <= this.currentIndex ? `
                 <!-- nextsong__fist-item-headding--active nextsong__fist-item-playbtn--active-->
@@ -653,7 +653,7 @@ function fetchSongsData() {
             })
             playListElement.innerHTML = htmls.join('');
         },
-    
+
         // RENDER LIST NEXT SONG 
         renderNextSongList: function(playListElement) {
             if (this.currentIndex >= this.songsData.length - 1) {
@@ -685,31 +685,31 @@ function fetchSongsData() {
                 })
                 playListElement.innerHTML = htmls.join('');
             }
-            
+
         },
-    
+
         // RENDER LIST NEXT SONG RANDOM
         renderNextSongListRandom: function(playListElement) {
-            const htmls =  `<span class="nextsong__option-random">
+            const htmls = `<span class="nextsong__option-random">
                                 Ngẫu nhiên cần gì biết bài tiếp theo :))
                             </span>`
             playListElement.innerHTML = htmls;
         },
-    
-        
-    
+
+
+
         // KHI ACTIVE KHUẤT THÌ ĐƯA ITEM ACTIVE LÊN VIEW
-        scrollToActiveSong: function () {
+        scrollToActiveSong: function() {
             setTimeout(() => {
-              $(".songs-item--active").scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-              });
+                $(".songs-item--active").scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
             }, 300);
         },
-    
+
         // KHI ACTIVE KHUẤT THÌ ĐƯA NEXT SONG ITEM ACTIVE LÊN VIEW
-        scrollToActiveNextSong: function () {
+        scrollToActiveNextSong: function() {
             // setTimeout(() => {
             //   $(".nextsong__fist-item-headding--active").scrollIntoView({
             //     behavior: "smooth",
@@ -717,18 +717,18 @@ function fetchSongsData() {
             //   });
             // }, 300);
         },
-    
-        RandomSong: function () {
+
+        RandomSong: function() {
             let newIndex;
             do {
-              newIndex = Math.floor(Math.random() * this.songsData.length);
+                newIndex = Math.floor(Math.random() * this.songsData.length);
             } while (newIndex === this.currentIndex);
-        
+
             this.currentIndex = newIndex;
             this.loadCurrentSong();
         },
-    
-        loadCurrentSong: function () {
+
+        loadCurrentSong: function() {
             nameSong.textContent = this.currentSong.name;
             $('.mobile-player__body-now-name').textContent = this.currentSong.name;
             nameSinger.textContent = this.currentSong.singer;
@@ -738,39 +738,39 @@ function fetchSongsData() {
             this.displayDurationTime();
             audio.src = this.currentSong.pathSong;
         },
-    
-        nextSong: function () {
+
+        nextSong: function() {
             this.currentIndex++;
             if (this.currentIndex >= this.songsData.length) {
-              this.currentIndex = 0;
+                this.currentIndex = 0;
             }
             this.loadCurrentSong();
         },
-    
-        prevSong: function () {
+
+        prevSong: function() {
             this.currentIndex--;
             if (this.currentIndex < 0) {
-              this.currentIndex = this.songsData.length - 1;
+                this.currentIndex = this.songsData.length - 1;
             }
             this.loadCurrentSong();
         },
-    
+
         // ĐỊNH DẠNG LẠI THỜI GIAN CHO ĐẸP
-        formatTime : function(number) {
+        formatTime: function(number) {
             const minutes = Math.floor(number / 60);
             const seconds = Math.floor(number - minutes * 60);
             return `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
         },
-    
+
         // HIỂN THỊ REMAIN TIME TIME VÀO PLAYER
-        displayRemainTime : function() {
+        displayRemainTime: function() {
             remainTime.textContent = this.formatTime(audio.currentTime);
             // on mobile
             $('.mobile-player__ctrl-progress-time-start').textContent = this.formatTime(audio.currentTime);
         },
-    
+
         // HIỂN THỊ VÀ DURATION TIME VÀO PLAYER
-        displayDurationTime : function() {
+        displayDurationTime: function() {
             // if (!audio.duration) {
             //     durationTime.textContent = "00:00";
             // } else {
@@ -779,26 +779,26 @@ function fetchSongsData() {
             durationTime.textContent = this.currentSong.duration;
             $('.mobile-player__ctrl-progress-time-duration').textContent = this.currentSong.duration;
         },
-    
+
         // render next song
         renderNexrSong: function() {
-            this.renderNextSongHeadding(nextSongHeadding,this.songsData);
+            this.renderNextSongHeadding(nextSongHeadding, this.songsData);
             this.renderNextSongList(nextSongList);
             themeItems[backgroundIndex].click();
         },
-    
+
         verifyOptionTextColor: function() {
             $$('.music__option-item').forEach((tab, index) => {
-                if(backgroundIndex === 0 || backgroundIndex === 1 || backgroundIndex === 2) {
+                if (backgroundIndex === 0 || backgroundIndex === 1 || backgroundIndex === 2) {
                     tab.style.color = '#fff'
                 } else {
                     tab.style.color = '#000'
                 }
             })
         },
-    
+
         // SỰ KIỆN VÀ XỬ LÝ
-        handleEvents: function () {
+        handleEvents: function() {
             const _this = this;
             const songTyms = $$('.songs-item-right-tym');
             const songItems = $$('.js__song-item0');
@@ -809,26 +809,26 @@ function fetchSongsData() {
             const playBtnIconsOption1 = $$('.js__songs-item-left-img-1');
             const actionHeartNextSongs = $$('.nextsong__item-action-heart');
             const nextSongBox = $('.nextsong__box');
-    
+
             var sliderIndex = 1;
             var sliderIndex1 = 1;
             var sliderLenght = _this.songsData.length;
-    
+
             // KHI BẤM VÀO PLAYER ON MOBILE THÌ HIỆN PLAYER TO TRÊN ĐIỆN THOẠI
             $('.music-control__left').onclick = function() {
                 $('.mobile-player').classList.add('active');
             }
-    
+
             $('.mobile-player__headding-close').onclick = function() {
                 $('.mobile-player').classList.remove('active');
             }
-    
+
             // NHẤN MORE HIỂN THỊ 100 BÀI HÁT
             $('.js__zingchart__100more').onclick = function() {
                 _this.renderZingChartMore();
                 this.style.display = 'none';
             }
-    
+
             // CHUYỂN TAB CÁ NHÂN / KHÁM PHÁ / ZINGCHART
             sideBarTabs.forEach((tab, index) => {
                 tab.onclick = function() {
@@ -840,7 +840,7 @@ function fetchSongsData() {
                     containerPanes[index].style.display = "block";
                 }
             })
-    
+
             // CHUYỂN TAB CÁ NHÂN / KHÁM PHÁ / ZINGCHART TRÊN MOBILE
             $$('.js__mobile-tab__item').forEach((tab, index) => {
                 tab.onclick = function() {
@@ -852,7 +852,7 @@ function fetchSongsData() {
                     containerPanes[index].style.display = "block";
                 }
             })
-    
+
             // chuyển tab option
             tabs.forEach((tab, index) => {
                 const pane = panes[index];
@@ -869,28 +869,28 @@ function fetchSongsData() {
                     tabs[3].style.backgroundColor = 'transparent';
                     tab.style.backgroundColor = `var(--option-color-${backgroundIndex})`;
                     pane.classList.add('active')
-                    // if (index === 1) {
-                    //     _this.renderPlayList1($('.option-music-list'),_this.songsData);
-                    // }
+                        // if (index === 1) {
+                        //     _this.renderPlayList1($('.option-music-list'),_this.songsData);
+                        // }
                     $('.music__option-item.music__option-item--active').classList.remove('js__main-color');
                 }
             })
-    
+
             // khi mới mở web thì sẽ chọn hightlight dòng đầu tiên
             songItems[this.currentIndex].classList.add('songs-item-playbtn--active');
-    
-            
+
+
             songTyms.forEach((songTym, index) => {
                 songTym.onclick = function() {
                     songTym.classList.toggle('songs-item-right-tym--active');
                 }
             });
-    
+
             // CLICK TYM Ở NOW PLAYER
             musicNowTym.onclick = function() {
                 this.classList.toggle('music-control__left-action-tym-box-active');
             }
-    
+
             // BẬT TĂT MUTE Ở VOLUME
             volumeIcon.onclick = function() {
                 _this.isMute = !_this.isMute;
@@ -903,7 +903,7 @@ function fetchSongsData() {
                     volumeProgress.value = _this.volume;
                 }
             }
-    
+
             // TĂNG GIẢM ÂM LƯỢNG
             volumeProgress.onchange = function(e) {
                 _this.volume = e.target.value;
@@ -916,39 +916,39 @@ function fetchSongsData() {
                     _this.isMute = false;
                 }
             }
-    
-    
+
+
             // XỬ LÝ CD QUAY/DỪNG
             const cdThumbAnimate = cdThumb.animate([{ transform: "rotate(360deg)" }], {
                 duration: 10000, // 10 seconds
                 iterations: Infinity
             });
             cdThumbAnimate.pause();
-    
+
             // XỬ LÝ CD QUAY/DỪNG TO TRÊN MOBILE
             const cdThumbAnimateMobile = $('.mobile-player__body-thumb').animate([{ transform: "rotate(360deg)" }], {
                 duration: 10000, // 10 seconds
                 iterations: Infinity
             });
             cdThumbAnimateMobile.pause();
-    
+
             //   LÀM SLIDER BÊN TAP CÁ NHÂN
             changeImage = function() {
-                sliderItems.forEach((item,index) => {
-                        // index == sliderIndex ? sliderItems[index].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-first') : index == sliderIndex + 1 ?  sliderItems[index].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-second'):sliderItems[index].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-third');
+                sliderItems.forEach((item, index) => {
+                    // index == sliderIndex ? sliderItems[index].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-first') : index == sliderIndex + 1 ?  sliderItems[index].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-second'):sliderItems[index].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-third');
                     if (index == sliderIndex) {
-                        sliderItems[index].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-first');
-                        sliderItems[index].classList.replace('option-all__song-slider-img-second','option-all__song-slider-img-first');
+                        sliderItems[index].classList.replace('option-all__song-slider-img-third', 'option-all__song-slider-img-first');
+                        sliderItems[index].classList.replace('option-all__song-slider-img-second', 'option-all__song-slider-img-first');
                     } else if (index == sliderIndex + 1) {
-                        sliderItems[index].classList.replace('option-all__song-slider-img-first','option-all__song-slider-img-second');
-                        sliderItems[index].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-second');
+                        sliderItems[index].classList.replace('option-all__song-slider-img-first', 'option-all__song-slider-img-second');
+                        sliderItems[index].classList.replace('option-all__song-slider-img-third', 'option-all__song-slider-img-second');
                     } else {
-                        sliderItems[index].classList.replace('option-all__song-slider-img-first','option-all__song-slider-img-third');
-                        sliderItems[index].classList.replace('option-all__song-slider-img-second','option-all__song-slider-img-third');
+                        sliderItems[index].classList.replace('option-all__song-slider-img-first', 'option-all__song-slider-img-third');
+                        sliderItems[index].classList.replace('option-all__song-slider-img-second', 'option-all__song-slider-img-third');
                     }
                     if (sliderIndex == sliderLenght - 1) {
-                        sliderItems[0].classList.replace('option-all__song-slider-img-first','option-all__song-slider-img-second');
-                        sliderItems[0].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-second');
+                        sliderItems[0].classList.replace('option-all__song-slider-img-first', 'option-all__song-slider-img-second');
+                        sliderItems[0].classList.replace('option-all__song-slider-img-third', 'option-all__song-slider-img-second');
                     }
                 })
                 sliderIndex++;
@@ -956,39 +956,39 @@ function fetchSongsData() {
                     sliderIndex = 0;
                 }
             }
-            setInterval(changeImage,2000);
-    
+            setInterval(changeImage, 2000);
+
             //   LÀM SLIDER BÊN TAP KHÁM PHÁ
             changeImage1Replate = function() {
-                slidersDiscover.forEach((item,index) => {
+                slidersDiscover.forEach((item, index) => {
                     if (index == sliderIndex1) {
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-second','container-discover__slider-item-first');
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-third','container-discover__slider-item-first');
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-four','container-discover__slider-item-first');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-second', 'container-discover__slider-item-first');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-third', 'container-discover__slider-item-first');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-four', 'container-discover__slider-item-first');
                     } else if (index == sliderIndex1 + 1) {
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-first','container-discover__slider-item-second');
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-third','container-discover__slider-item-second');
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-four','container-discover__slider-item-second');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-first', 'container-discover__slider-item-second');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-third', 'container-discover__slider-item-second');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-four', 'container-discover__slider-item-second');
                     } else if (index == sliderIndex1 + 2) {
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-first','container-discover__slider-item-third');
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-second','container-discover__slider-item-third');
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-four','container-discover__slider-item-third');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-first', 'container-discover__slider-item-third');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-second', 'container-discover__slider-item-third');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-four', 'container-discover__slider-item-third');
                     } else {
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-first','container-discover__slider-item-four');
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-second','container-discover__slider-item-four');
-                        slidersDiscover[index].classList.replace('container-discover__slider-item-third','container-discover__slider-item-four');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-first', 'container-discover__slider-item-four');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-second', 'container-discover__slider-item-four');
+                        slidersDiscover[index].classList.replace('container-discover__slider-item-third', 'container-discover__slider-item-four');
                     }
                     if (sliderIndex1 == 2) {
-                        slidersDiscover[0].classList.replace('container-discover__slider-item-first','container-discover__slider-item-third');
-                        slidersDiscover[0].classList.replace('container-discover__slider-item-second','container-discover__slider-item-third');
-                        slidersDiscover[0].classList.replace('container-discover__slider-item-four','container-discover__slider-item-third');
+                        slidersDiscover[0].classList.replace('container-discover__slider-item-first', 'container-discover__slider-item-third');
+                        slidersDiscover[0].classList.replace('container-discover__slider-item-second', 'container-discover__slider-item-third');
+                        slidersDiscover[0].classList.replace('container-discover__slider-item-four', 'container-discover__slider-item-third');
                     } else if (sliderIndex1 == 3) {
-                        slidersDiscover[0].classList.replace('container-discover__slider-item-first','container-discover__slider-item-second');
-                        slidersDiscover[0].classList.replace('container-discover__slider-item-third','container-discover__slider-item-second');
-                        slidersDiscover[0].classList.replace('container-discover__slider-item-four','container-discover__slider-item-second');
-                        slidersDiscover[1].classList.replace('container-discover__slider-item-first','container-discover__slider-item-third');
-                        slidersDiscover[1].classList.replace('container-discover__slider-item-second','container-discover__slider-item-third');
-                        slidersDiscover[1].classList.replace('container-discover__slider-item-four','container-discover__slider-item-third');
+                        slidersDiscover[0].classList.replace('container-discover__slider-item-first', 'container-discover__slider-item-second');
+                        slidersDiscover[0].classList.replace('container-discover__slider-item-third', 'container-discover__slider-item-second');
+                        slidersDiscover[0].classList.replace('container-discover__slider-item-four', 'container-discover__slider-item-second');
+                        slidersDiscover[1].classList.replace('container-discover__slider-item-first', 'container-discover__slider-item-third');
+                        slidersDiscover[1].classList.replace('container-discover__slider-item-second', 'container-discover__slider-item-third');
+                        slidersDiscover[1].classList.replace('container-discover__slider-item-four', 'container-discover__slider-item-third');
                     }
                 })
             }
@@ -999,12 +999,12 @@ function fetchSongsData() {
                     sliderIndex1 = 0;
                 }
             }
-            setInterval(changeImage1,5000);
+            setInterval(changeImage1, 5000);
             // khi bấm vào nut right của slider
             $('.js__container-discover__slider-right').onclick = function() {
-                changeImage1();
-            }
-            // khi bấm vào nut left của slider
+                    changeImage1();
+                }
+                // khi bấm vào nut left của slider
             $('.js__container-discover__slider-left').onclick = function() {
                 changeImage1Replate();
                 sliderIndex1--;
@@ -1012,31 +1012,31 @@ function fetchSongsData() {
                     sliderIndex1 = 3;
                 }
             }
-    
-    
-    
+
+
+
             // XỬ LÝ KHI CLICK VÀO NÚT PLAY
-            playBtn.onclick = function () {
+            playBtn.onclick = function() {
                 if (_this.isPlaying) {
-                  audio.pause();
+                    audio.pause();
                 } else {
-                  audio.play();
+                    audio.play();
                 }
             }
-    
+
             // XỬ LÝ KHI CLICK VÀO NÚT PLAY ON MOBILE
-            $('.js__mobile-player__ctrl-icon').onclick = function () {
+            $('.js__mobile-player__ctrl-icon').onclick = function() {
                 if (_this.isPlaying) {
-                  audio.pause();
+                    audio.pause();
                 } else {
-                  audio.play();
+                    audio.play();
                 }
             }
-    
+
             // Khi song được play
-            audio.onplay = function () {
+            audio.onplay = function() {
                 const nextSongsItemHeadding = $$('.nextsong__fist-item');
-    
+
                 _this.isPlaying = true;
                 // player.classList.add("playing");
                 cdThumbAnimate.play();
@@ -1044,24 +1044,24 @@ function fetchSongsData() {
                 playBtn.classList.add('music-control__icon-play--active');
                 $('.js__mobile-player__ctrl-icon').classList.add('music-control__icon-play--active');
                 thunbPlayerBox.style.transform = "translateX(20px)";
-    
+
                 songItems[_this.currentIndex].classList.add('songs-item-playing--active-onplay');
-                songItems[_this.currentIndex].classList.add('songs-item--active');            
-                songItems[_this.currentIndex].classList.remove('songs-item-playbtn--active'); 
-    
+                songItems[_this.currentIndex].classList.add('songs-item--active');
+                songItems[_this.currentIndex].classList.remove('songs-item-playbtn--active');
+
                 songItemsOption1[_this.currentIndex].classList.add('songs-item-playing--active-onplay');
-                songItemsOption1[_this.currentIndex].classList.add('songs-item--active');            
-                songItemsOption1[_this.currentIndex].classList.remove('songs-item-playbtn--active'); 
-                
+                songItemsOption1[_this.currentIndex].classList.add('songs-item--active');
+                songItemsOption1[_this.currentIndex].classList.remove('songs-item-playbtn--active');
+
                 // songItemsOption1[_this.currentIndex].classList.add('songs-item-playing--active-onplay');
-                
+
                 const nextSongItems = $$('.nextsong__item')
-                nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-headding--active');          
-                nextSongItems[_this.currentIndex].classList.remove('nextsong__fist-item-playbtn--active');          
+                nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-headding--active');
+                nextSongItems[_this.currentIndex].classList.remove('nextsong__fist-item-playbtn--active');
             };
-      
+
             // KHI SONG BỊ PAUSE
-            audio.onpause = function () {
+            audio.onpause = function() {
                 _this.isPlaying = false;
                 cdThumbAnimate.pause();
                 cdThumbAnimateMobile.pause();
@@ -1074,11 +1074,11 @@ function fetchSongsData() {
                 songItemsOption1[_this.currentIndex].classList.add('songs-item-playbtn--active');
                 const nextSongItems = $$('.nextsong__item')
                 nextSongItems[_this.currentIndex].classList.remove('nextsong__fist-item-headding--active');
-                nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-playbtn--active');          
+                nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-playbtn--active');
             }
-    
+
             // KHI TIẾN ĐỘ BÀI HÁT THAY ĐỔI
-            audio.ontimeupdate = function () {
+            audio.ontimeupdate = function() {
                 if (audio.duration) {
                     const progressPercent = Math.floor((audio.currentTime / audio.duration) * 100);
                     progress.value = progressPercent;
@@ -1087,18 +1087,18 @@ function fetchSongsData() {
                 }
                 _this.displayRemainTime();
             }
-    
+
             // KHI TUA SONG
-            progress.onchange = function (e) {
+            progress.onchange = function(e) {
+                    const seekTime = (audio.duration / 100) * e.target.value;
+                    audio.currentTime = seekTime;
+                }
+                // KHI TUA SONG ON MOBILE
+            $('#progress2').onchange = function(e) {
                 const seekTime = (audio.duration / 100) * e.target.value;
                 audio.currentTime = seekTime;
             }
-            // KHI TUA SONG ON MOBILE
-            $('#progress2').onchange = function (e) {
-                const seekTime = (audio.duration / 100) * e.target.value;
-                audio.currentTime = seekTime;
-            }
-    
+
             // XOÁ CÁC THUỘC TÍNH KHI ACTIVE CŨ
             deleteActive = function() {
                 songItems.forEach((songItem, index) => {
@@ -1107,7 +1107,7 @@ function fetchSongsData() {
                     songItem.classList.remove('songs-item-playbtn--active');
                 });
             }
-    
+
             deleteActive1 = function() {
                 songItemsOption1.forEach((songItem, index) => {
                     songItem.classList.remove('songs-item-playing--active-onplay');
@@ -1115,14 +1115,14 @@ function fetchSongsData() {
                     songItem.classList.remove('songs-item-playbtn--active');
                 });
             }
-    
-    
+
+
             // KHI NEXT SONG
             nextBtn.onclick = function() {
                 if (_this.isRandom) {
                     _this.RandomSong();
                     // không render list next song
-                    _this.renderNextSongHeadding(nextSongHeadding,this.songsData);
+                    _this.renderNextSongHeadding(nextSongHeadding, this.songsData);
                     nextSongList.innerHTML = `
                         <span class="nextsong__last-item-end">
                             Ngẫu nhiên
@@ -1137,13 +1137,13 @@ function fetchSongsData() {
                 deleteActive();
                 deleteActive1();
             }
-    
+
             // KHI NEXT SONG ON MOBILE
             $('.js__mobile-player__ctrl-icon4').onclick = function() {
                 if (_this.isRandom) {
                     _this.RandomSong();
                     // không render list next song
-                    _this.renderNextSongHeadding(nextSongHeadding,this.songsData);
+                    _this.renderNextSongHeadding(nextSongHeadding, this.songsData);
                     nextSongList.innerHTML = `
                         <span class="nextsong__last-item-end">
                             Ngẫu nhiên
@@ -1158,13 +1158,13 @@ function fetchSongsData() {
                 deleteActive();
                 deleteActive1();
             }
-    
+
             // KHI PREV SONG
             prevBtn.onclick = function() {
                 if (_this.isRandom) {
                     _this.RandomSong();
                     // không render list next song
-                    _this.renderNextSongHeadding(nextSongHeadding,this.songsData);
+                    _this.renderNextSongHeadding(nextSongHeadding, this.songsData);
                     nextSongList.innerHTML = `
                         <span class="nextsong__last-item-end">
                             Ngẫu nhiên
@@ -1180,13 +1180,13 @@ function fetchSongsData() {
                 deleteActive1();
                 _this.scrollToActiveSong();
             }
-    
+
             // KHI PREV SONG ON MOBILE
             $('.js__mobile-player__ctrl-icon2').onclick = function() {
                 if (_this.isRandom) {
                     _this.RandomSong();
                     // không render list next song
-                    _this.renderNextSongHeadding(nextSongHeadding,this.songsData);
+                    _this.renderNextSongHeadding(nextSongHeadding, this.songsData);
                     nextSongList.innerHTML = `
                         <span class="nextsong__last-item-end">
                             Ngẫu nhiên
@@ -1202,7 +1202,7 @@ function fetchSongsData() {
                 deleteActive1();
                 _this.scrollToActiveSong();
             }
-    
+
             // KHI BAM VÀO NÚT PHÁT TẤT CẢ OPTION-0
             playAllBtn.onclick = function() {
                 _this.currentIndex = 0;
@@ -1210,8 +1210,8 @@ function fetchSongsData() {
                 audio.play();
                 deleteActive();
                 _this.scrollToActiveSong();
-                if(_this.isRandom) {
-                    _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                if (_this.isRandom) {
+                    _this.renderNextSongHeadding(nextSongHeadding, _this.songsData);
                     nextSongList.innerHTML = `
                         <span class="nextsong__last-item-end">
                             Ngẫu nhiên
@@ -1222,7 +1222,7 @@ function fetchSongsData() {
                     _this.scrollToActiveNextSong();
                 }
             }
-    
+
             // KHI BAM VÀO NÚT PHÁT TẤT CẢ OPTION-1
             playAllBtn1.onclick = function() {
                 _this.currentIndex = 0;
@@ -1231,8 +1231,8 @@ function fetchSongsData() {
                 deleteActive();
                 deleteActive1();
                 _this.scrollToActiveSong();
-                if(_this.isRandom) {
-                    _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                if (_this.isRandom) {
+                    _this.renderNextSongHeadding(nextSongHeadding, _this.songsData);
                     nextSongList.innerHTML = `
                         <span class="nextsong__last-item-end">
                             Ngẫu nhiên
@@ -1243,7 +1243,7 @@ function fetchSongsData() {
                     _this.scrollToActiveNextSong();
                 }
             }
-    
+
             // KHI BẤM VÀO NÚT PLAY Ở THUMB BÀI BÁT Ở PHẦN TỔNG QUAN
             playBtnIcons.forEach((playBtnIcon, index) => {
                 playBtnIcon.onclick = function() {
@@ -1260,8 +1260,8 @@ function fetchSongsData() {
                         _this.renderNexrSong();
                         _this.scrollToActiveNextSong();
                     }
-                    if(_this.isRandom) {
-                        _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                    if (_this.isRandom) {
+                        _this.renderNextSongHeadding(nextSongHeadding, _this.songsData);
                         nextSongList.innerHTML = `
                             <span class="nextsong__last-item-end">
                                 Ngẫu nhiên
@@ -1274,7 +1274,7 @@ function fetchSongsData() {
                     }
                 }
             });
-    
+
             // KHI BẤM VÀO NÚT PLAY Ở THUMB BÀI BÁT Ở PHẦN MUSIC OPTION1
             playBtnIconsOption1.forEach((item, index) => {
                 item.onclick = function() {
@@ -1292,8 +1292,8 @@ function fetchSongsData() {
                         _this.renderNexrSong();
                         _this.scrollToActiveNextSong();
                     }
-                    if(_this.isRandom) {
-                        _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                    if (_this.isRandom) {
+                        _this.renderNextSongHeadding(nextSongHeadding, _this.songsData);
                         nextSongList.innerHTML = `
                             <span class="nextsong__last-item-end">
                                 Ngẫu nhiên
@@ -1306,25 +1306,25 @@ function fetchSongsData() {
                     }
                 }
             })
-    
+
             // KHI CLICK VÀO NEXT SONG BOX
-            nextSongBox.onclick = function (e) {
+            nextSongBox.onclick = function(e) {
                 const songNode = e.target.closest(".nextsong__item");
-                if ( songNode) {
+                if (songNode) {
                     if (e.target.closest(".nextsong__item-action-heart")) {
-                        e.target.closest(".nextsong__item-action-heart").classList.toggle('nextsong__item-action-heart--unheart');   
+                        e.target.closest(".nextsong__item-action-heart").classList.toggle('nextsong__item-action-heart--unheart');
                     }
                     if (e.target.closest(".nextsong__item-img")) {
                         if (_this.isPlaying && Number(songNode.dataset.index) == _this.currentIndex) {
                             audio.pause();
                             _this.isPlaying = false;
                             songNode.classList.remove('nextsong__fist-item-headding--active');
-                        }else if (!_this.isPlaying && Number(songNode.dataset.index) == _this.currentIndex) {
+                        } else if (!_this.isPlaying && Number(songNode.dataset.index) == _this.currentIndex) {
                             audio.play();
                             _this.isPlaying = true;
                             songNode.classList.add('nextsong__fist-item-headding--active');
-                            
-                        }else if (Number(songNode.dataset.index) != _this.currentIndex) {
+
+                        } else if (Number(songNode.dataset.index) != _this.currentIndex) {
                             _this.currentIndex = Number(songNode.dataset.index);
                             _this.loadCurrentSong();
                             _this.renderNexrSong();
@@ -1334,25 +1334,25 @@ function fetchSongsData() {
                             _this.isPlaying = true;
                             const nextSongItems = $$('.nextsong__item')
                             nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-headding--active');
-                        }  
+                        }
                     }
                 }
             };
-    
+
             // KHI CLICK DUP VÀO NEXT SONG BOX
-            nextSongBox.ondblclick = function (e) {
+            nextSongBox.ondblclick = function(e) {
                 const songNode = e.target.closest(".nextsong__item:not(.nextsong__fist-item-headding--active)");
-                if ( songNode) {
+                if (songNode) {
                     if (_this.isPlaying && Number(songNode.dataset.index) == _this.currentIndex) {
                         audio.pause();
                         _this.isPlaying = false;
                         songNode.classList.remove('nextsong__fist-item-headding--active');
-                    }else if (!_this.isPlaying && Number(songNode.dataset.index) == _this.currentIndex) {
+                    } else if (!_this.isPlaying && Number(songNode.dataset.index) == _this.currentIndex) {
                         audio.play();
                         _this.isPlaying = true;
                         songNode.classList.add('nextsong__fist-item-headding--active');
-                        
-                    }else if (Number(songNode.dataset.index) != _this.currentIndex) {
+
+                    } else if (Number(songNode.dataset.index) != _this.currentIndex) {
                         _this.currentIndex = Number(songNode.dataset.index);
                         _this.loadCurrentSong();
                         _this.renderNexrSong();
@@ -1362,10 +1362,10 @@ function fetchSongsData() {
                         _this.isPlaying = true;
                         const nextSongItems = $$('.nextsong__item')
                         nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-headding--active');
-                    }  
+                    }
                 }
             };
-    
+
             // KHI BẬT NÚT CHẠY RANDOM
             randomBtn.onclick = function() {
                 _this.isRandom = !_this.isRandom;
@@ -1377,9 +1377,9 @@ function fetchSongsData() {
                     randomBtn.style.color = '#fff';
                 }
                 repeatBtn.classList.toggle("music-control__icon-repeat--active", _this.isRepeat);
-                
-                if(_this.isRandom) {
-                    _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+
+                if (_this.isRandom) {
+                    _this.renderNextSongHeadding(nextSongHeadding, _this.songsData);
                     nextSongList.innerHTML = `
                         <span class="nextsong__last-item-end">
                             Random thì bài tiếp theo là bí mật nhé!
@@ -1393,7 +1393,7 @@ function fetchSongsData() {
                     }
                 }
             }
-    
+
             // KHI BẬT NÚT CHẠY RANDOM ON MOBILE
             $('.js__mobile-player__ctrl-icon1').onclick = function() {
                 _this.isRandom = !_this.isRandom;
@@ -1406,9 +1406,9 @@ function fetchSongsData() {
                     randomBtn.style.color = '#fff';
                 }
                 $('.js__mobile-player__ctrl-icon5').classList.toggle("music-control__icon-repeat--active", _this.isRepeat);
-                
-                if(_this.isRandom) {
-                    _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+
+                if (_this.isRandom) {
+                    _this.renderNextSongHeadding(nextSongHeadding, _this.songsData);
                     nextSongList.innerHTML = `
                         <span class="nextsong__last-item-end">
                             Random thì bài tiếp theo là bí mật nhé!
@@ -1422,7 +1422,7 @@ function fetchSongsData() {
                     }
                 }
             }
-    
+
             // KHI BẬT NÚT CHẠY REPEAT
             repeatBtn.onclick = function() {
                 _this.isRepeat = !_this.isRepeat;
@@ -1434,7 +1434,7 @@ function fetchSongsData() {
                 _this.renderNexrSong();
                 _this.scrollToActiveNextSong();
             }
-    
+
             // KHI BẬT NÚT CHẠY REPEAT ON MOBILE
             $('.js__mobile-player__ctrl-icon5').onclick = function() {
                 _this.isRepeat = !_this.isRepeat;
@@ -1446,18 +1446,18 @@ function fetchSongsData() {
                 _this.renderNexrSong();
                 _this.scrollToActiveNextSong();
             }
-    
+
             // XỬ LÝ KHI AUDIO KẾT THÚC
-            audio.onended = function () {
+            audio.onended = function() {
                 if (_this.isRepeat) {
-                  audio.play();
+                    audio.play();
                 } else {
-                  nextBtn.click();
-                  _this.renderNexrSong();
-                  _this.scrollToActiveNextSong();
+                    nextBtn.click();
+                    _this.renderNexrSong();
+                    _this.scrollToActiveNextSong();
                 }
             };
-    
+
             // KHI CLICK DUP VÀO BÀI NHẠC THÌ PHÁT NHẠC
             songItems.forEach((songItem, index) => {
                 songItem.ondblclick = function() {
@@ -1466,18 +1466,18 @@ function fetchSongsData() {
                     deleteActive();
                     deleteActive1();
                     audio.play();
-    
-                    if(_this.isRandom) {
+
+                    if (_this.isRandom) {
                         // không render next song list
-                        _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                        _this.renderNextSongHeadding(nextSongHeadding, _this.songsData);
                     } else {
                         _this.renderNexrSong();
                         _this.scrollToActiveNextSong();
                     }
                 }
-                
+
             })
-    
+
             // KHI CLICK DUP VÀO BÀI NHẠC THÌ PHÁT NHẠC
             songItemsOption1.forEach((songItem, index) => {
                 songItem.ondblclick = function() {
@@ -1486,27 +1486,27 @@ function fetchSongsData() {
                     deleteActive();
                     deleteActive1();
                     audio.play();
-    
-                    if(_this.isRandom) {
+
+                    if (_this.isRandom) {
                         // không render next song list
-                        _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                        _this.renderNextSongHeadding(nextSongHeadding, _this.songsData);
                     } else {
                         _this.renderNexrSong();
                         _this.scrollToActiveNextSong();
                     }
                 }
-                
+
             })
-    
+
             // CUỘN LÊN THÌ LÀM TRONG THANH HEADER
             mainContainer.onscroll = function() {
                 scrollTop = mainContainer.scrollY || mainContainer.scrollTop
-                // if (scrollTop > 50) {
-                //     header.classList.toggle('header--active');
-                // }
-    
+                    // if (scrollTop > 50) {
+                    //     header.classList.toggle('header--active');
+                    // }
+
                 // làm cách này mà ko làm cách trên để tránh bị gật lag 
-                if(scrollTop > 5) {
+                if (scrollTop > 5) {
                     Object.assign(header.style, {
                         backgroundColor: `var(--header-color-${backgroundIndex})`,
                         boxShadow: '0 3px 5px rgba(0,0,0,0.1)',
@@ -1518,7 +1518,7 @@ function fetchSongsData() {
                     })
                 }
             };
-    
+
             // KHI CLICK SETTING
             headerSetting.onclick = function(e) {
                 headerSetting.classList.toggle('header__setting--active');
@@ -1534,35 +1534,35 @@ function fetchSongsData() {
                 headerSetting.classList.remove('header__setting--active');
                 headerOverlay.classList.add('hiden');
             }
-    
+
             // THEME MODAL
             themebtn.onclick = function() {
-                themeModal.classList.toggle('theme-modal--avtive'); 
+                themeModal.classList.toggle('theme-modal--avtive');
             }
             themeBody.onclick = function(e) {
                 e.stopPropagation();
             }
             themeClosebtn.onclick = function() {
-                themeModal.classList.remove('theme-modal--avtive'); 
+                themeModal.classList.remove('theme-modal--avtive');
             }
             themeOverlay.onclick = function() {
-                themeModal.classList.remove('theme-modal--avtive'); 
+                themeModal.classList.remove('theme-modal--avtive');
             }
-    
+
             // TOAST
             $$('.js__toast').forEach((item, index) => {
                 item.onclick = function() {
                     _this.toastSlide();
                 }
             })
-            
-            
-            
-            
-    
-            
+
+
+
+
+
+
         },
-    
+
         // QUAY NỐT NHẠC VỆ TINH
         // musicNote : function() {
         //     setInterval(function() {
@@ -1573,42 +1573,42 @@ function fetchSongsData() {
         //         document.querySelector('.vetinh-1').style.top = py + "px"; 
         //     })
         // },
-            
-    
+
+
         //=================================================================
         start: function() {
             // render ra danh sách nhạc ở phần tổng quan
-            this.renderPlayList(optionAllSongList,this.songsData);
+            this.renderPlayList(optionAllSongList, this.songsData);
             // render ra danh sách nhạc ở phần tab music
-            this.renderPlayList1($('.option-music-list'),this.songsData);
+            this.renderPlayList1($('.option-music-list'), this.songsData);
             // render next song
             this.renderNexrSong();
             // render next song start
-            this.renderNextSongHeaddingStart(nextSongHeadding,this.songsData);
+            this.renderNextSongHeaddingStart(nextSongHeadding, this.songsData);
             // render zingchart
             this.renderZingChart();
-    
-    
-    
+
+
+
             // Define các thuộc tính cho object
             this.defineProperties();
-    
+
             // xử lý và sự kiện
-            this.handleEvents(); 
-    
+            this.handleEvents();
+
             // hiển thị thời gian chạy và thời lượng của audio hiện tại
             this.displayDurationTime();
-    
+
             // theme
             this.applyTheme();
-    
+
             this.loadCurrentSong();
-    
+
             // this.musicNote();
         }
-    
+
     }
-    
+
     app.start();
 
-  });
+});

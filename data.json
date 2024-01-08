@@ -1,13 +1,5 @@
 [
     {
-        "id": 1,
-        "background": ".\/assets\/img\/songs\/0.webp",
-        "name": "Anh \u0110\u00e3 L\u1ea1c V\u00e0o",
-        "singer": "Green, \u0110\u1ea1i M\u00e8o Remix",
-        "pathSong": ".\/assets\/music\/list-song\/0.mp3",
-        "duration": "04:27"
-    },
-    {
         "id": 4,
         "background": ".\/assets\/img\/songs\/1.webp",
         "name": "Ch\u1ea1y V\u1ec1 Kh\u00f3c V\u1edbi Anh",
@@ -158,5 +150,13 @@
         "singer": "buitruonglinh ft vuphungtien",
         "pathSong": ".\/assets\/music\/list-song\/19.mp3",
         "duration": "04:29"
+    },
+    {
+        "id": 30,
+        "background": ".\/assets\/img\/songs\/maxresdefault.jpg",
+        "name": "Everything Goes On",
+        "singer": "Porter Robinson",
+        "pathSong": ".\/assets\/music\/list-song\/Y2meta.app - Everything Goes On - Porter Robinson (Official Music Video) _ Star Guardian 2022 (320 kbps).mp3",
+        "duration": "02:39"
     }
 ]

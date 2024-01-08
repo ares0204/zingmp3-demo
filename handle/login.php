@@ -15,9 +15,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["firstName"] = $row["firstName"];
         $_SESSION["lastName"] = $row["lastName"];
     
-        // Người dùng đăng nhập thành công
-        header("Location: ../index.php");
-        exit();
+        if ($row["type"] == "admin") {
+            // Người dùng là admin, chuyển hướng đến trang admin
+            header("Location: ../admin/index.php");
+            exit();
+        } else {
+            // Người dùng không phải là admin, chuyển hướng đến trang người dùng thông thường
+            header("Location: ../index.php");
+            exit();
+        }
     } else {
         // Sai tên đăng nhập hoặc mật khẩu
         echo "<h3>Sai tên đăng nhập hoặc mật khẩu!</h3>";
