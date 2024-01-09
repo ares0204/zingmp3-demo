@@ -1,6 +1,6 @@
 <?php
-    include('../handle/config.php');
-    session_start();
+include('../handle/config.php');
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
@@ -56,15 +56,15 @@
                             </div>
                             <div class="profile-name">
                                 <h5 class="mb-0 font-weight-normal" style="color: white;">
-                                  
-                                  <?php
+
+                                    <?php
                                     // Check if the user is logged in
-                                    if(isset($_SESSION["firstName"]) && isset($_SESSION["lastName"])) {
+                                    if (isset($_SESSION["firstName"]) && isset($_SESSION["lastName"])) {
                                         echo $_SESSION["firstName"] . ' ' . $_SESSION["lastName"];
                                     } else {
                                         echo "Khách"; // Display "Khách" if the user is not logged in
                                     }
-                                  ?>
+                                    ?>
 
                                 </h5>
                                 <span>ADMIN</span>
@@ -164,14 +164,14 @@
                                 <div class="navbar-profile">
                                     <img class="img-xs rounded-circle" src="../assets/img/user/user.png" alt="">
                                     <p class="mb-0 d-none d-sm-block navbar-profile-name">
-                                        
+
                                         <?php
-                                            // Check if the user is logged in
-                                            if(isset($_SESSION["firstName"]) && isset($_SESSION["lastName"])) {
-                                                echo $_SESSION["firstName"] . ' ' . $_SESSION["lastName"];
-                                            } else {
-                                                echo "Khách"; // Display "Khách" if the user is not logged in
-                                            }
+                                        // Check if the user is logged in
+                                        if (isset($_SESSION["firstName"]) && isset($_SESSION["lastName"])) {
+                                            echo $_SESSION["firstName"] . ' ' . $_SESSION["lastName"];
+                                        } else {
+                                            echo "Khách"; // Display "Khách" if the user is not logged in
+                                        }
                                         ?>
 
                                     </p>
@@ -192,7 +192,7 @@
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
+                                <a href='../handle/logout.php' class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-logout text-danger"></i>
@@ -208,8 +208,8 @@
                         </li>
                     </ul>
                     <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-              <span class="mdi mdi-format-line-spacing"></span>
-                </button>
+                        <span class="mdi mdi-format-line-spacing"></span>
+                    </button>
                 </div>
             </nav>
             <!-- partial -->
@@ -228,14 +228,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <table class="table table-striped table-hover">
+                            <table id="songTable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>
                                             <span class="custom-checkbox">
-                                          <input type="checkbox" id="selectAll">
-                                          <label for="selectAll"></label>
-                                      </span>
+                                                <input type="checkbox" id="selectAll">
+                                                <label for="selectAll"></label>
+                                            </span>
                                         </th>
                                         <th>ID</th>
                                         <th>Background</th>
@@ -248,46 +248,48 @@
                                 <tbody>
 
                                     <?php
-                                        $sql = "SELECT * FROM songs";
-                                        $result = $conn->query($sql);
-                                        
-                                        if ($result->num_rows > 0) {
-                                            // Output data of each row
-                                            while($row = $result->fetch_assoc()) {
-                                                echo "
-                                                    <tr data-toggle='modal' data-target='#deleteEmployeeModal' data-song-id='" . $row["id"]. "'>
+                                    $sql = "SELECT * FROM songs";
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) {
+                                        // Output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "
+                                                    <tr data-target='#deleteEmployeeModal' data-song-id='" . $row["id"] . "'>
                                                         <td>
                                                             <span class='custom-checkbox'>
                                                                 <input type='checkbox' id='checkbox1' name='options[]' value='1'>
                                                                 <label for='checkbox1'></label>
                                                             </span>
                                                         </td>
-                                                        <td>" . $row["id"]. "</td>
+                                                        <td>" . $row["id"] . "</td>
                                                         <td>
-                                                            <img src='../" . $row["background"]. "' alt=''>
+                                                            <img src='../" . $row["background"] . "' alt=''>
                                                         </td>
                                                         <td style='max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>
-                                                            " . $row["name"]. "
+                                                            " . $row["name"] . "
                                                         </td>
                                                         <td style='max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>
-                                                            " . $row["singer"]. "
+                                                            " . $row["singer"] . "
                                                         </td>
                                                         <td style='max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>
-                                                            " . $row["pathSong"]. "
+                                                            " . $row["pathSong"] . "
                                                         </td>
-                                                        <td>" . $row["duration"]. "</td>
+                                                        <td>" . $row["duration"] . "</td>
                                                         <td>
-                                                            <a href='#editEmployeeModal' class='edit' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
-                                                            <a href='#' class='delete-song delete' data-song-id='" . $row["id"]. "'>
+                                                            <a href='#editEmployeeModal' class='edit' data-toggle='modal'>
+                                                                <i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i>
+                                                            </a>
+                                                            <a href='#deleteEmployeeModal' class='delete-song delete' data-toggle='modal' data-song-id='" . $row["id"] . "'>
                                                                 <i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i>
                                                             </a>
                                                         </td>
                                                     </tr>
                                                 ";
-                                            }
-                                        } else {
-                                            echo "0 results";
                                         }
+                                    } else {
+                                        echo "0 results";
+                                    }
                                     ?>
 
                                 </tbody>
@@ -363,15 +365,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Upload Image</label>
-                                        <!-- <input type="hidden" name="existing_image" id="edit-existing-image"> -->
                                         <input type="file" name="image" accept="image/*" class="form-control-file" id="edit-existing-image" onchange="previewImage(this);">
-                                        <img id="edit-preview-image" src="#" alt="Preview Image" style="display: none; max-width: 200px; margin-top: 10px;">
+                                        <img id="edit-preview-image" src="#" alt="Preview Image" style="max-width: 200px; margin-top: 10px; display: none;">
+                                        <img id="preview-image" src="#" alt="Preview Image" style="max-width: 200px; margin-top: 10px; display: none;">
                                     </div>
                                     <div class="form-group">
                                         <label>Upload MP3</label>
-                                        <!-- <input type="hidden" name="existing_mp3" id="edit-existing-mp3"> -->
                                         <input type="file" name="mp3" accept=".mp3" class="form-control-file" id="edit-existing-mp3" onchange="previewAudio(this);">
-                                        <audio id="edit-preview-audio" controls style="display: none; margin-top: 10px;"></audio>
+                                        <audio id="edit-preview-audio" controls style="margin-top: 10px; display: none;"></audio>
+                                        <audio id="preview-audio" controls style="margin-top: 10px; display: none;"></audio>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -433,12 +435,14 @@
     <script>
         function previewImage(input) {
             var preview = document.getElementById('preview-image');
+            var previewEdit = document.getElementById('edit-preview-image');
             var file = input.files[0];
             var reader = new FileReader();
 
-            reader.onloadend = function () {
+            reader.onloadend = function() {
                 preview.src = reader.result;
                 preview.style.display = 'block';
+                previewEdit.style.display = 'none';
             }
 
             if (file) {
@@ -446,6 +450,7 @@
             } else {
                 preview.src = '';
                 preview.style.display = 'none';
+                previewEdit.style.display = 'block';
             }
         }
     </script>
@@ -454,12 +459,14 @@
     <script>
         function previewAudio(input) {
             var audio = document.getElementById('preview-audio');
+            var audioEdit = document.getElementById('edit-preview-audio');
             var file = input.files[0];
             var reader = new FileReader();
 
-            reader.onloadend = function () {
+            reader.onloadend = function() {
                 audio.src = reader.result;
                 audio.style.display = 'block';
+                audioEdit.style.display = 'none';
             }
 
             if (file) {
@@ -467,40 +474,74 @@
             } else {
                 audio.src = '';
                 audio.style.display = 'none';
+                audioEdit.style.display = 'block';
             }
         }
     </script>
     <!-- End preview Music -->
     <!-- Get id for Update -->
     <script>
-        $(document).on('click', 'tr[data-toggle="modal"]', function () {
-            var id = $(this).data('song-id');
-            var name = $(this).find('td:eq(3)').text();
-            var singer = $(this).find('td:eq(4)').text();
-            var duration = $(this).find('td:eq(6)').text();
-            var image = $(this).find('td:eq(2)').text();
-            var mp3 = $(this).find('td:eq(5)').text();
+        $(document).on('click', '.edit', function(e) {
+            e.stopPropagation(); // Prevent triggering the parent row click event
+            var id = $(this).closest('tr').data('song-id');
+            var name = $(this).closest('tr').find('td:eq(3)').text();
+            var singer = $(this).closest('tr').find('td:eq(4)').text();
+            var duration = $(this).closest('tr').find('td:eq(6)').text();
+            var image = $(this).closest('tr').find('td:eq(2) img').attr('src');
+            var mp3 = $(this).closest('tr').find('td:eq(5)').text();
 
             // Fill the modal inputs with existing values
             $('#edit-song-id').val(id);
             $('#edit-song-name').val(name.trim());
             $('#edit-song-singer').val(singer.trim());
             $('#edit-song-duration').val(duration.trim());
+
+            // Display existing image and audio
+            $('#edit-preview-image').attr('src', image).show();
+            $('#edit-preview-audio').attr('src', mp3).show();
+
+            // Store existing image and mp3 paths for later use
             $('#edit-existing-image').val(image.trim());
             $('#edit-existing-mp3').val(mp3.trim());
-
-            // Additional code to handle updating the preview images and audio if needed
         });
     </script>
     <!-- End get id for Update -->
     <!-- Get id for Delete -->
     <script>
-        $(document).on('click', 'a.delete-song', function () {
-            var id = $(this).data('song-id');
+        $(document).on('click', '.delete-song', function(e) {
+            e.stopPropagation(); // Prevent triggering the parent row click event
+            var id = $(this).closest('tr').data('song-id');
             $('#delete-song-id').val(id);
         });
     </script>
     <!-- End get id for Delete -->
+    <!-- Click open model -->
+    <script>
+        $(document).ready(function() {
+            // Activate tooltip
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Select/Deselect checkboxes
+            var checkbox = $('table tbody input[type="checkbox"]');
+            $("#selectAll").click(function() {
+                if (this.checked) {
+                    checkbox.each(function() {
+                        this.checked = true;
+                    });
+                } else {
+                    checkbox.each(function() {
+                        this.checked = false;
+                    });
+                }
+            });
+            checkbox.click(function() {
+                if (!this.checked) {
+                    $("#selectAll").prop("checked", false);
+                }
+            });
+        });
+    </script>
+    <!-- End click open model -->
 </body>
 
 </html>

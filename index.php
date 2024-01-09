@@ -1,10 +1,12 @@
 <?php
-    include('./handle/getMusic.php');
-    session_start();
+include('./handle/getMusic.php');
+include('./handle/config.php');
+session_start();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,6 +32,7 @@
     <!-- icon fontawesome -->
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
 </head>
+
 <body>
     <div class="main" style="background-image: url(./assets/img/background-theme/backroundThemes/0.svg);">
         <div class="grid">
@@ -52,10 +55,9 @@
                             <i class="fas fa-chart-line"></i>
                             #zingchart
                         </li>
-                        <li class="sidebar__item js__main-color sidebar__item-radio js__toast">
-                            <i class="fas fa-broadcast-tower"></i>
-                            Radio
-                            <span>Live</span>
+                        <li class="sidebar__item js__sidebar-tabs js__main-color">
+                            <i class="fab fa-buromobelexperte"></i>
+                            Thể Loại
                         </li>
                         <li class="sidebar__item js__main-color js__toast">
                             <i class="far fa-list-alt"></i>
@@ -72,10 +74,10 @@
                                 <i class="fas fa-music"></i>
                                 Nhạc Mới
                             </li>
-                            <li class="sidebar__item js__main-color js__toast">
+                            <!-- <li class="sidebar__item js__main-color js__toast">
                                 <i class="fab fa-buromobelexperte"></i>
                                 Thể Loại
-                            </li>
+                            </li> -->
                             <li class="sidebar__item js__main-color js__toast">
                                 <i class="fas fa-star"></i>
                                 Top 100
@@ -190,9 +192,15 @@
                                             <span class="js__sub-color">#zingchart</span>
                                         </a>
                                     </li>
+                                    <li class="header__width-search-sub-item">
+                                        <a href="#" class="header__width-search-sub-item-link">
+                                            <i class="fas fa-arrows-alt-h js__sub-color"></i>
+                                            <span class="js__sub-color">Thể loại</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
-                            
+
                         </div>
                         <div class="header__right">
                             <div class="header__theme js__sub-color js__backgroundColor">
@@ -201,7 +209,7 @@
                             <div class="header__upload mobile-hiden js__sub-color js__toast js__backgroundColor hover">
                                 <i class="fas fa-upload"></i>
                             </div>
-    
+
                             <div class="header__right-overlay hiden"></div>
                             <!-- header__setting--active -->
                             <div class="header__setting mobile-hiden js__sub-color js__backgroundColor">
@@ -245,8 +253,8 @@
                                         Chính sách bảo mật
                                     </li>
                                 </ul>
-    
-    
+
+
                             </div>
                             <div class="header__user">
                                 <a href="#">
@@ -254,14 +262,14 @@
                                 </a>
 
                                 <?php
-                                    // Check if the user is logged in
-                                    if(isset($_SESSION["firstName"]) && isset($_SESSION["lastName"])) {
-                                        echo "<a href='./handle/logout.php' id='logoutBtn'>Đăng xuất</a>";
-                                    } else {
-                                        echo "<a href='./page/login.html' id='logoutBtn'>Đăng nhập</a>"; // Display "Khách" if the user is not logged in
-                                    }
+                                // Check if the user is logged in
+                                if (isset($_SESSION["firstName"]) && isset($_SESSION["lastName"])) {
+                                    echo "<a href='./handle/logout.php' id='logoutBtn'>Đăng xuất</a>";
+                                } else {
+                                    echo "<a href='./page/login.html' id='logoutBtn'>Đăng nhập</a>"; // Display "Khách" if the user is not logged in
+                                }
                                 ?>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -275,12 +283,12 @@
                         <span class="profile__name js__main-color">
 
                             <?php
-                                // Check if the user is logged in
-                                if(isset($_SESSION["firstName"]) && isset($_SESSION["lastName"])) {
-                                    echo $_SESSION["firstName"] . ' ' . $_SESSION["lastName"];
-                                } else {
-                                    echo "Khách"; // Display "Khách" if the user is not logged in
-                                }
+                            // Check if the user is logged in
+                            if (isset($_SESSION["firstName"]) && isset($_SESSION["lastName"])) {
+                                echo $_SESSION["firstName"] . ' ' . $_SESSION["lastName"];
+                            } else {
+                                echo "Khách"; // Display "Khách" if the user is not logged in
+                            }
                             ?>
 
                         </span>
@@ -290,7 +298,7 @@
                             <span class="profile__vip-more js__main-color js__backgroundColor"><i class="fas fa-ellipsis-h"></i></span>
                         </div>
                     </div>
-    
+
                     <div class="music__option">
                         <ul class="music__option-list js__backgroundColor">
                             <!-- top-music__option-item -->
@@ -347,7 +355,7 @@
                                     </div> -->
                                     <img class="rotate" src="./assets/img/icon-home/small-logo.svg" alt="" width="100%" style="height: -webkit-fill-available;">
                                 </div>
-                                
+
                                 <div class="col l-9 m-12 s-12">
                                     <div class="option-all__songs">
                                         <ul class="option-all__songs-list songs-list">
@@ -464,7 +472,7 @@
                                 </div>
                             </ul>
                         </div>
-    
+
                         <!-- option-all__mv -->
                         <div class="option-all__playlist option-all__margin_bot">
                             <div class="option-heading option-all__playlist-heading">
@@ -784,7 +792,7 @@
                                 </div>
                             </ul>
                         </div>
-    
+
                         <div class="option-all__playlist option-all__margin_bot mobile-hiden">
                             <div class="option-heading option-all__playlist-heading">
                                 <h3 class="option-heading-name js__main-color">MV</h3>
@@ -1266,7 +1274,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="main-container-zingchart js__container-panes ">
                     <div class="zingchart__headding js__main-color">
                         #zingchart
@@ -1277,7 +1285,7 @@
                     </div>
                     <div class="zingchart-week__headding zingchart__headding js__main-color">Bảng Xếp Hạng Tuần</div>
                     <div class="row">
-                        <div class="col l-4 laptop-l-6 m-12 s-12">
+                        <div class="col l-6 laptop-l-6 m-12 s-12">
                             <div class="zingchart-week__item-wrapper js__backgroundColor">
                                 <span class="zingchart-week__headding js__main-color">Việt Nam</span>
                                 <ul class="zingchart-week__list">
@@ -1357,7 +1365,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col l-4 laptop-l-6 m-12 s-12">
+                        <div class="col l-6 laptop-l-6 m-12 s-12">
                             <div class="zingchart-week__item-wrapper js__backgroundColor">
                                 <span class="zingchart-week__headding js__main-color">US-UK</span>
                                 <ul class="zingchart-week__list">
@@ -1437,80 +1445,90 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col l-4 laptop-l-6 m-12 s-12">
+                    </div>
+                </div>
+
+                <div class="main-container-zingchart js__container-panes ">
+                    <div class="zingchart__headding js__main-color">
+                        Thể loại
+                    </div>
+                    <ul class="zingchart__list js__zingchart__list"></ul>
+                    <div class="zingchart-week__headding zingchart__headding js__main-color">Bảng Thể loại</div>
+                    <div class="row">
+                        <div class="col l laptop-l-6 m-12 s-12">
                             <div class="zingchart-week__item-wrapper js__backgroundColor">
-                                <span class="zingchart-week__headding js__main-color">K-Pop</span>
+                                <span class="zingchart-week__headding js__main-color">Remix</span>
                                 <ul class="zingchart-week__list">
-                                    <li class="zingchart-week__item">
-                                        <div class="zingchart-week__item-left">
-                                            <span class="zingchart__item-left-stt zingchart-week__item-left-stt">1</span>
-                                            <span class="zingchart__item-left-line zingchart-week__item-left-line">-</span>
-                                        </div>
-                                        <div class="zingchart-week__item-center">
-                                            <img src="./assets/img/songs/0.webp" alt="anh" class="zingchart-week__item-center-img">
-                                            <div class="zingchart-week__item-center-content">
-                                                <span class="js__main-color zingchart-week__item-center-content-name">Tình Yêu Ngủ Quên</span>
-                                                <span class="js__main-color zingchart-week__item-center-content-singer">Hoàng Tôn, LyHan, Orinn Remix</span>
-                                            </div>
-                                        </div>
-                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">05:08</div>
-                                    </li>
-                                    <li class="zingchart-week__item">
-                                        <div class="zingchart-week__item-left">
-                                            <span class="zingchart__item-left-stt zingchart-week__item-left-stt">2</span>
-                                            <span class="zingchart__item-left-line zingchart-week__item-left-line">-</span>
-                                        </div>
-                                        <div class="zingchart-week__item-center">
-                                            <img src="./assets/img/songs/1.webp" alt="anh" class="zingchart-week__item-center-img">
-                                            <div class="zingchart-week__item-center-content">
-                                                <span class="js__main-color zingchart-week__item-center-content-name">Váy Cưới</span>
-                                                <span class="js__main-color zingchart-week__item-center-content-singer">Thuỳ Duyên Cover, Huy Lee Remix</span>
-                                            </div>
-                                        </div>
-                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">04:20</div>
-                                    </li>
-                                    <li class="zingchart-week__item">
-                                        <div class="zingchart-week__item-left">
-                                            <span class="zingchart__item-left-stt zingchart-week__item-left-stt">3</span>
-                                            <span class="zingchart__item-left-line zingchart-week__item-left-line">-</span>
-                                        </div>
-                                        <div class="zingchart-week__item-center">
-                                            <img src="./assets/img/songs/2.webp" alt="anh" class="zingchart-week__item-center-img">
-                                            <div class="zingchart-week__item-center-content">
-                                                <span class="js__main-color zingchart-week__item-center-content-name">Yêu Đừng Sợ Đau</span>
-                                                <span class="js__main-color zingchart-week__item-center-content-singer">Ngô Lan Hương, Cukak Remix</span>
-                                            </div>
-                                        </div>
-                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">04:56</div>
-                                    </li>
-                                    <li class="zingchart-week__item">
-                                        <div class="zingchart-week__item-left">
-                                            <span class="zingchart__item-left-stt zingchart-week__item-left-stt">4</span>
-                                            <span class="zingchart__item-left-line zingchart-week__item-left-line">-</span>
-                                        </div>
-                                        <div class="zingchart-week__item-center">
-                                            <img src="./assets/img/songs/3.jpg" alt="anh" class="zingchart-week__item-center-img">
-                                            <div class="zingchart-week__item-center-content">
-                                                <span class="js__main-color zingchart-week__item-center-content-name">Có Hẹn Với Thanh Xuân</span>
-                                                <span class="js__main-color zingchart-week__item-center-content-singer">Monstar ,1967 Remix</span>
-                                            </div>
-                                        </div>
-                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">05:26</div>
-                                    </li>
-                                    <li class="zingchart-week__item">
-                                        <div class="zingchart-week__item-left">
-                                            <span class="zingchart__item-left-stt zingchart-week__item-left-stt">5</span>
-                                            <span class="zingchart__item-left-line zingchart-week__item-left-line">-</span>
-                                        </div>
-                                        <div class="zingchart-week__item-center">
-                                            <img src="./assets/img/songs/4.webp" alt="anh" class="zingchart-week__item-center-img">
-                                            <div class="zingchart-week__item-center-content">
-                                                <span class="js__main-color zingchart-week__item-center-content-name">Vui Lắm Nha</span>
-                                                <span class="js__main-color zingchart-week__item-center-content-singer">Hương Ly, Jombie, RIN Music Remix</span>
-                                            </div>
-                                        </div>
-                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">03:56</div>
-                                    </li>
+                                    
+                                    <?php
+                                        $sql = "SELECT * FROM songs WHERE genre = 'remix'";
+                                        $result = $conn->query($sql);
+                                        
+                                        if ($result->num_rows > 0) {
+                                            // Output data of each row
+                                            while ($row = $result->fetch_assoc()) {
+                                                echo "
+                                                    <li class='zingchart-week__item'>
+                                                        <div class='zingchart-week__item-left'>
+                                                            <span class='zingchart__item-left-stt zingchart-week__item-left-stt'></span>
+                                                            <!-- <span class='zingchart__item-left-line zingchart-week__item-left-line'></span> -->
+                                                        </div>
+                                                        <div class='zingchart-week__item-center'>
+                                                            <img src='" . $row["background"] . "' alt='anh' class='zingchart-week__item-center-img'>
+                                                            <div class='zingchart-week__item-center-content'>
+                                                                <span class='js__main-color zingchart-week__item-center-content-name'>" . $row["name"] . "</span>
+                                                                <span class='js__main-color zingchart-week__item-center-content-singer'>" . $row["singer"] . "</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class='zingchart-week__item-right mobile-hiden js__main-color'>" . $row["duration"] . "</div>
+                                                    </li>
+                                                ";
+                                            }
+                                        } else {
+                                            echo "0 results";
+                                        }
+                                        ?>
+
+                                </ul>
+                                <div class="zingchart__100more zingchart-week__100more">
+                                    <span class="zingchart__100more-body js__main-color js__border">Xem tất cả</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l laptop-l-6 m-12 s-12">
+                            <div class="zingchart-week__item-wrapper js__backgroundColor">
+                                <span class="zingchart-week__headding js__main-color">VPOP</span>
+                                <ul class="zingchart-week__list">
+                                    
+                                    <?php
+                                        $sql = "SELECT * FROM songs WHERE genre = 'vpop'";
+                                        $result = $conn->query($sql);
+                                        
+                                        if ($result->num_rows > 0) {
+                                            // Output data of each row
+                                            while ($row = $result->fetch_assoc()) {
+                                                echo "
+                                                    <li class='zingchart-week__item'>
+                                                        <div class='zingchart-week__item-left'>
+                                                            <span class='zingchart__item-left-stt zingchart-week__item-left-stt'></span>
+                                                            <!-- <span class='zingchart__item-left-line zingchart-week__item-left-line'></span> -->
+                                                        </div>
+                                                        <div class='zingchart-week__item-center'>
+                                                            <img src='" . $row["background"] . "' alt='anh' class='zingchart-week__item-center-img'>
+                                                            <div class='zingchart-week__item-center-content'>
+                                                                <span class='js__main-color zingchart-week__item-center-content-name'>" . $row["name"] . "</span>
+                                                                <span class='js__main-color zingchart-week__item-center-content-singer'>" . $row["singer"] . "</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class='zingchart-week__item-right mobile-hiden js__main-color'>" . $row["duration"] . "</div>
+                                                    </li>
+                                                ";
+                                            }
+                                        } else {
+                                            echo "0 results";
+                                        }
+                                        ?>
+
                                 </ul>
                                 <div class="zingchart__100more zingchart-week__100more">
                                     <span class="zingchart__100more-body js__main-color js__border">Xem tất cả</span>
@@ -1556,7 +1574,7 @@
                                 </li>
                             </ul>
                         </div>
-    
+
                         <div class="theme-modal__body-group">
                             <span class="theme-modal__body-group-headding js__main-color">Nghệ Sĩ</span>
                             <ul class="theme-modal__body-group-list">
@@ -1600,7 +1618,7 @@
                                     </div>
                                     <span class="theme-modal__body-group-item-name js__main-color">Jisoo</span>
                                 </li>
-                              
+
                             </ul>
                         </div>
                         <div class="theme-modal__body-group">
@@ -1654,7 +1672,7 @@
                                     </div>
                                     <span class="theme-modal__body-group-item-name js__main-color">Đỏ</span>
                                 </li>
-                           
+
                             </ul>
                         </div>
                         <div class="theme-modal__body-group">
@@ -1686,11 +1704,11 @@
                                 </li>
                             </ul>
                         </div>
-                        
-                    </div>
-                    
 
-                    
+                    </div>
+
+
+
                 </div>
             </div>
             <!-- BEGIN NEXT-SONG -->
@@ -1753,7 +1771,7 @@
                                 </div>
                             </li> -->
                         </ul>
-                    </div>  
+                    </div>
                 </div>
             </div>
             <!-- END NEXT-SONG -->
@@ -1811,7 +1829,7 @@
                                     </svg> 
                                 </div> -->
                             </div>
-                            
+
                             <div class="music-control__left-content">
                                 <span class="music-control__left-content-song js__main-color">Cưới luôn được không</span>
                                 <span class="music-control__left-content-singer js__sub-color">Út nhị Cover</span>
@@ -1912,7 +1930,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- END PLAYER ON MOBILE -->
 
 
@@ -1927,4 +1945,5 @@
 
     <script src="./assets/javascript/main.js"></script>
 </body>
+
 </html>
