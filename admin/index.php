@@ -10,7 +10,7 @@ session_start();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Zingmp3 - ADMIN PAGE</title>
+    <title>PSound - ADMIN PAGE</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
@@ -26,7 +26,7 @@ session_start();
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../assets/img/icon-home/small-logo.svg" />
+    <link rel="shortcut icon" href="../assets/img/sidebar-icon/logo/zyro-image.png" />
     <!-- Table -->
     <link rel="stylesheet" href="./assets/css/table.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
@@ -43,8 +43,8 @@ session_start();
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-                <a class="sidebar-brand brand-logo" href="index.html"><img src="../assets/img/icon-home/small-logo.svg" alt="logo" /></a>
-                <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="../assets/img/icon-home/small-logo.svg" alt="logo" /></a>
+                <a class="sidebar-brand brand-logo" href="index.html"><img src="../assets/img/sidebar-icon/logo/zyro-image.png" alt="logo" /></a>
+                <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="../assets/img/sidebar-icon/logo/zyro-image.png" alt="logo" /></a>
             </div>
             <ul class="nav">
                 <li class="nav-item profile">
@@ -243,6 +243,7 @@ session_start();
                                         <th>Singer</th>
                                         <th>pathSong</th>
                                         <th>Duration</th>
+                                        <th>Genre</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -276,6 +277,7 @@ session_start();
                                                             " . $row["pathSong"] . "
                                                         </td>
                                                         <td>" . $row["duration"] . "</td>
+                                                        <td>" . $row["genre"] . "</td>
                                                         <td>
                                                             <a href='#editEmployeeModal' class='edit' data-toggle='modal'>
                                                                 <i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i>
@@ -320,6 +322,10 @@ session_start();
                                         <input type="text" name="duration" class="form-control" required>
                                     </div>
                                     <div class="form-group">
+                                        <label>Genre</label>
+                                        <input type="text" name="genre" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Upload Image</label>
                                         <input type="file" name="image" accept="image/*" class="form-control-file" onchange="previewImage(this);">
                                         <img id="preview-image" src="#" alt="Preview Image" style="display: none; max-width: 200px; margin-top: 10px;">
@@ -362,6 +368,10 @@ session_start();
                                     <div class="form-group">
                                         <label>Duration</label>
                                         <input type="text" name="duration" id="edit-song-duration" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Genre</label>
+                                        <input type="text" name="genre" id="edit-song-genre" class="form-control" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Upload Image</label>
@@ -487,6 +497,7 @@ session_start();
             var name = $(this).closest('tr').find('td:eq(3)').text();
             var singer = $(this).closest('tr').find('td:eq(4)').text();
             var duration = $(this).closest('tr').find('td:eq(6)').text();
+            var genre = $(this).closest('tr').find('td:eq(7)').text();
             var image = $(this).closest('tr').find('td:eq(2) img').attr('src');
             var mp3 = $(this).closest('tr').find('td:eq(5)').text();
 
@@ -495,6 +506,7 @@ session_start();
             $('#edit-song-name').val(name.trim());
             $('#edit-song-singer').val(singer.trim());
             $('#edit-song-duration').val(duration.trim());
+            $('#edit-song-genre').val(genre.trim());
 
             // Display existing image and audio
             $('#edit-preview-image').attr('src', image).show();

@@ -11,8 +11,8 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zing Mp3</title>
-    <link rel="icon" href="./assets/img/icon-home/small-logo.svg" type="image/gif" sizes="16x16">
+    <title>PSound</title>
+    <link rel="icon" href="./assets/img/sidebar-icon/logo/zyro-image.png" type="image/gif" sizes="16x16">
     <!-- reset css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <!-- css grid để kết hợp chia khung và responsive -->
@@ -34,7 +34,7 @@ session_start();
 </head>
 
 <body>
-    <div class="main" style="background-image: url(./assets/img/background-theme/backroundThemes/0.svg);">
+    <div class="main" style="background-image: url(./assets/img/background-theme/backroundThemes/background-1.jpg); background-size: cover;">
         <div class="grid">
             <!-- BEGIN SIDEBAR -->
             <div class="main-sidebar mobile-hiden">
@@ -53,7 +53,7 @@ session_start();
                         </li>
                         <li class="sidebar__item js__sidebar-tabs js__main-color">
                             <i class="fas fa-chart-line"></i>
-                            #zingchart
+                            #pchart
                         </li>
                         <li class="sidebar__item js__sidebar-tabs js__main-color">
                             <i class="fab fa-buromobelexperte"></i>
@@ -183,13 +183,13 @@ session_start();
                                     <li class="header__width-search-sub-item">
                                         <a href="#" class="header__width-search-sub-item-link">
                                             <i class="fas fa-arrows-alt-h js__sub-color"></i>
-                                            <span class="js__sub-color">zing choice</span>
+                                            <span class="js__sub-color">p choice</span>
                                         </a>
                                     </li>
                                     <li class="header__width-search-sub-item">
                                         <a href="#" class="header__width-search-sub-item-link">
                                             <i class="fas fa-arrows-alt-h js__sub-color"></i>
-                                            <span class="js__sub-color">#zingchart</span>
+                                            <span class="js__sub-color">#pchart</span>
                                         </a>
                                     </li>
                                     <li class="header__width-search-sub-item">
@@ -353,7 +353,7 @@ session_start();
                                         <img src="./assets/img/slider/14.webp" alt="anh slider" class="option-all__song-slider-img option-all__song-slider-img-third">
                                         <img src="./assets/img/slider/15.webp" alt="anh slider" class="option-all__song-slider-img option-all__song-slider-img-third">
                                     </div> -->
-                                    <img class="rotate" src="./assets/img/icon-home/small-logo.svg" alt="" width="100%" style="height: -webkit-fill-available;">
+                                    <img class="rotate" src="./assets/img/icon-home/logo.svg" alt="" width="100%" style="height: -webkit-fill-available;">
                                 </div>
 
                                 <div class="col l-9 m-12 s-12">
@@ -433,7 +433,7 @@ session_start();
                                             </div>
                                             <div class="option-all__playlist-item-content">
                                                 <div class="option-all__playlist-item-content-name1 js__main-color">4U - On Repeat</div>
-                                                <div class="option-all__playlist-item-content-name2 js__sub-color">Zing MP3</div>
+                                                <div class="option-all__playlist-item-content-name2 js__sub-color">PSound</div>
                                             </div>
                                         </li>
                                     </div>
@@ -445,11 +445,11 @@ session_start();
                                                     <i class="fas fa-play option-all__playlist-item-img-wrapper-action-icon2"></i>
                                                     <i class="fas fa-ellipsis-h option-all__playlist-item-img-wrapper-action-icon3"></i>
                                                 </div>
-                                                <div class="option-all__playlist-item-img option-all__playlist-item-img-fix" style="background-image: url(./assets/img/playlist/3.webp);"></div>
+                                                <div class="option-all__playlist-item-img option-all__playlist-item-img-fix" style="background-image: url(./assets/img/playlist/5.png);"></div>
                                             </div>
                                             <div class="option-all__playlist-item-content">
-                                                <div class="option-all__playlist-item-content-name1 js__main-color">#zingchart</div>
-                                                <div class="option-all__playlist-item-content-name2 js__sub-color">Zing MP3</div>
+                                                <div class="option-all__playlist-item-content-name1 js__main-color">#pchart</div>
+                                                <div class="option-all__playlist-item-content-name2 js__sub-color">PSound</div>
                                             </div>
                                         </li>
                                     </div>
@@ -465,7 +465,7 @@ session_start();
                                             </div>
                                             <div class="option-all__playlist-item-content">
                                                 <div class="option-all__playlist-item-content-name1 js__main-color">Nhạc của Phúc</div>
-                                                <div class="option-all__playlist-item-content-name2 js__sub-color">Zing MP3</div>
+                                                <div class="option-all__playlist-item-content-name2 js__sub-color">PSound</div>
                                             </div>
                                         </li>
                                     </div>
@@ -753,7 +753,7 @@ session_start();
                                             </div>
                                             <div class="option-all__playlist-item-content">
                                                 <div class="option-all__playlist-item-content-name1 js__main-color">4U - On Repeat</div>
-                                                <div class="option-all__playlist-item-content-name2 js__sub-color">Zing MP3</div>
+                                                <div class="option-all__playlist-item-content-name2 js__sub-color">PSound</div>
                                             </div>
                                         </li>
                                     </div>
@@ -765,11 +765,11 @@ session_start();
                                                     <i class="fas fa-play option-all__playlist-item-img-wrapper-action-icon2"></i>
                                                     <i class="fas fa-ellipsis-h option-all__playlist-item-img-wrapper-action-icon3"></i>
                                                 </div>
-                                                <div class="option-all__playlist-item-img option-all__playlist-item-img-fix" style="background-image: url(./assets/img/playlist/3.webp);"></div>
+                                                <div class="option-all__playlist-item-img option-all__playlist-item-img-fix" style="background-image: url(./assets/img/playlist/5.png);"></div>
                                             </div>
                                             <div class="option-all__playlist-item-content">
-                                                <div class="option-all__playlist-item-content-name1 js__main-color">#zingchart</div>
-                                                <div class="option-all__playlist-item-content-name2 js__sub-color">Zing MP3</div>
+                                                <div class="option-all__playlist-item-content-name1 js__main-color">#pchart</div>
+                                                <div class="option-all__playlist-item-content-name2 js__sub-color">PSound</div>
                                             </div>
                                         </li>
                                     </div>
@@ -785,7 +785,7 @@ session_start();
                                             </div>
                                             <div class="option-all__playlist-item-content">
                                                 <div class="option-all__playlist-item-content-name1 js__main-color">Nhạc của Phúc</div>
-                                                <div class="option-all__playlist-item-content-name2 js__sub-color">Zing MP3</div>
+                                                <div class="option-all__playlist-item-content-name2 js__sub-color">PSound</div>
                                             </div>
                                         </li>
                                     </div>
@@ -1049,7 +1049,7 @@ session_start();
                                         </div>
                                         <div class="option-all__playlist-item-content">
                                             <div class="option-all__playlist-item-content-name1 js__main-color white-color">4U - On Repeat</div>
-                                            <div class="option-all__playlist-item-content-name2 js__sub-color">Zing MP3</div>
+                                            <div class="option-all__playlist-item-content-name2 js__sub-color">PSound</div>
                                         </div>
                                     </li>
                                 </div>
@@ -1061,11 +1061,11 @@ session_start();
                                                 <i class="white-color fas fa-play option-all__playlist-item-img-wrapper-action-icon2"></i>
                                                 <i class="white-color fas fa-ellipsis-h option-all__playlist-item-img-wrapper-action-icon3"></i>
                                             </div>
-                                            <div class="option-all__playlist-item-img option-all__playlist-item-img-fix" style="background-image: url(./assets/img/playlist/3.webp);"></div>
+                                            <div class="option-all__playlist-item-img option-all__playlist-item-img-fix" style="background-image: url(./assets/img/playlist/5.png);"></div>
                                         </div>
                                         <div class="option-all__playlist-item-content">
-                                            <div class="option-all__playlist-item-content-name1 js__main-color white-color">#zingchart</div>
-                                            <div class="option-all__playlist-item-content-name2 js__sub-color">Zing MP3</div>
+                                            <div class="option-all__playlist-item-content-name1 js__main-color white-color">#pchart</div>
+                                            <div class="option-all__playlist-item-content-name2 js__sub-color">PSound</div>
                                         </div>
                                     </li>
                                 </div>
@@ -1081,7 +1081,7 @@ session_start();
                                         </div>
                                         <div class="option-all__playlist-item-content">
                                             <div class="option-all__playlist-item-content-name1 js__main-color white-color">Nhạc của Phúc</div>
-                                            <div class="option-all__playlist-item-content-name2 js__sub-color">Zing MP3</div>
+                                            <div class="option-all__playlist-item-content-name2 js__sub-color">PSound</div>
                                         </div>
                                     </li>
                                 </div>
@@ -1277,7 +1277,7 @@ session_start();
 
                 <div class="main-container-zingchart js__container-panes ">
                     <div class="zingchart__headding js__main-color">
-                        #zingchart
+                        #pchart
                     </div>
                     <ul class="zingchart__list js__zingchart__list"></ul>
                     <div class="zingchart__100more">
@@ -1564,7 +1564,7 @@ session_start();
                                     <div class="theme-modal__body-group-item-img-wrapper">
                                         <div class="theme-modal__body-group-item-img" style="background-image: url(./assets/img/background-theme/modalThemes/modalTheme1/theme1.jpg);"></div>
                                     </div>
-                                    <span class="theme-modal__body-group-item-name js__main-color">Zing Music Awards</span>
+                                    <span class="theme-modal__body-group-item-name js__main-color">P Music Awards</span>
                                 </li>
                                 <li class="theme-modal__body-group-item js-theme-item">
                                     <div class="theme-modal__body-group-item-img-wrapper">
@@ -1789,7 +1789,7 @@ session_start();
                     </li>
                     <li class="mobile-tab__item js__mobile-tab__item js__main-color">
                         <i class="fas fa-chart-line"></i>
-                        #zingchart
+                        #pchart
                     </li>
                     <li class="mobile-tab__item js__main-color">
                         <i class="fas fa-broadcast-tower"></i>
